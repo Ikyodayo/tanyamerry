@@ -72,9 +72,9 @@
       header.className = 'flex items-center space-x-2 text-sm font-semibold justify-center';
 
       if (role === 'user') {
-        header.innerHTML = `<span>😀 </span><span class="text-blue-600">Kamu</span>`;
+        header.innerHTML = `<span></span><span class="text-blue-600">Kamu</span>`;
       } else {
-        header.innerHTML = `<span>👧 </span><span class="text-purple-600">Merry</span>`;
+        header.innerHTML = `<span></span><span class="text-purple-600">Merry</span>`;
       }
 
       const bubble = document.createElement('div');
@@ -91,7 +91,7 @@
           <button
             onclick="copyToClipboard('${contentId}', this)"
             class="mt-2 inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-600 text-sm font-medium rounded hover:bg-blue-200 transition"
-          >📋 <span>Salin</span></button>
+          ><span>Salin</span></button>
         `;
       } else {
         bubble.innerHTML = `<div>${text}</div>`;
@@ -111,7 +111,7 @@
       const textToCopy = content.innerText || content.textContent;
       navigator.clipboard.writeText(textToCopy).then(() => {
         const original = buttonEl.innerHTML;
-        buttonEl.innerHTML = '✅ Disalin';
+        buttonEl.innerHTML = 'Disalin!';
         setTimeout(() => {
           buttonEl.innerHTML = original;
         }, 1500);
